@@ -1,7 +1,12 @@
 <template>
+  <td>
+    <div
   <div class="date">
-    {{ date }}
-  </div>
+      class="date"
+    >
+      {{ date }}
+    </div>
+  </td>
 </template>
 
 <script>
