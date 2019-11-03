@@ -1,7 +1,7 @@
 <template>
   <td>
     <div
-  <div class="date">
+      v-show="date"
       class="date"
     >
       {{ date }}
