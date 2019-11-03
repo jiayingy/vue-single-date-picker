@@ -1,8 +1,8 @@
 <template>
   <tr>
     <CalendarDate
-      v-for="date in dates"
-      :key="date"
+      v-for="(date, index) in week"
+      :key="index"
       :date="date"
     />
   </tr>
@@ -15,9 +15,9 @@ export default {
     CalendarDate
   },
   props: {
-    dates: {
-      type: Number,
-      default: () => 30
+    week: {
+      type: Array,
+      default: () => []
     },
   }
 }
