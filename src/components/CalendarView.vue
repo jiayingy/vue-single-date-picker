@@ -1,25 +1,32 @@
 <template>
-  <table>
-    <thead>
-      <CalendarHeader
-        v-for="(day, index) in daysInWeek"
-        :key="index"
-        :day="day"
-      />
-    </thead>
-    <tbody>
-      <CalendarWeek
-        v-for="(week, index) in datesPerWeek"
-        :key="index"
-        :week="week"
-      />
-    </tbody>
-  </table>
+  <div class="calendar-view">
+    <calendar-month
+      :year="year"
+      :month="month"
+    />
+    <table>
+      <thead>
+        <CalendarHeader
+          v-for="(day, index) in daysInWeek"
+          :key="index"
+          :day="day"
+        />
+      </thead>
+      <tbody>
+        <CalendarWeek
+          v-for="(week, index) in datesPerWeek"
+          :key="index"
+          :week="week"
+        />
+      </tbody>
+    </table>
+  </div>
 </template>
 
 <script>
 import CalendarHeader from './CalendarHeader';
 import CalendarWeek from './CalendarWeek';
+import CalendarMonth from './CalendarMonth';
 
 const NUM_DAYS_IN_WEEK = 7;
 
@@ -27,6 +34,7 @@ export default {
   components: {
     CalendarHeader,
     CalendarWeek,
+    CalendarMonth
   },
   data() {
     return {
@@ -94,8 +102,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-table {
+.calendar-view {
   padding: 15px;
+  max-width: 300px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
