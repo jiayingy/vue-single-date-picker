@@ -28,10 +28,15 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/essential",
+      "plugin:vue/recommended",
       "eslint:recommended"
     ],
-    "rules": {},
+    "rules": {
+      "vue/no-unused-components": "warn",
+      "no-unused-vars": "warn",
+      "quotes": ["error", "single"]
+    },
+    "parser": "vue-eslint-parser",
     "parserOptions": {
       "parser": "babel-eslint"
     }
