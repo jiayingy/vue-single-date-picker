@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="calendar-month-header">
     <div class="year">
       {{ year }}
     </div>
@@ -43,5 +43,13 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.calendar-month-header {
+  padding: $calendar-padding;
+  font-weight: 900;
+  font-size: 20px;
+  padding: 15px;
+  text-transform: uppercase;
+  background-image: linear-gradient(to right, #FFAFBD, #ffc3a0); 
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <table>
+  <table class="calendar-month">
     <thead>
       <CalendarWeekHeader
         v-for="(day, index) in daysInWeek"
@@ -40,6 +40,9 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.calendar-month {
+  width: 100%;
+  padding: $calendar-padding;
+}
 </style>
