@@ -4,41 +4,25 @@
       :year="year"
       :month="month"
     />
-    <table>
-      <thead>
-        <CalendarWeekHeader
-          v-for="(day, index) in daysInWeek"
-          :key="index"
-          :day="day"
-        />
-      </thead>
-      <tbody>
-        <CalendarWeek
-          v-for="(week, index) in datesPerWeek"
-          :key="index"
-          :week="week"
-        />
-      </tbody>
-    </table>
+    <CalendarMonth 
+      :dates-per-week="datesPerWeek"
+    />
   </div>
 </template>
 
 <script>
-import CalendarWeekHeader from './CalendarWeekHeader';
-import CalendarWeek from './CalendarWeek';
 import CalendarMonthHeader from './CalendarMonthHeader';
+import CalendarMonth from './CalendarMonth';
 
 const NUM_DAYS_IN_WEEK = 7;
 
 export default {
   components: {
-    CalendarWeekHeader,
-    CalendarWeek,
-    CalendarMonthHeader
+    CalendarMonthHeader,
+    CalendarMonth
   },
   data() {
     return {
-      daysInWeek: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
       year: 2019,
       month: 9
     }
