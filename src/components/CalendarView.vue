@@ -1,12 +1,12 @@
 <template>
   <div class="calendar-view">
-    <calendar-month
+    <CalendarMonthHeader
       :year="year"
       :month="month"
     />
     <table>
       <thead>
-        <CalendarHeader
+        <CalendarWeekHeader
           v-for="(day, index) in daysInWeek"
           :key="index"
           :day="day"
@@ -24,17 +24,17 @@
 </template>
 
 <script>
-import CalendarHeader from './CalendarHeader';
+import CalendarWeekHeader from './CalendarWeekHeader';
 import CalendarWeek from './CalendarWeek';
-import CalendarMonth from './CalendarMonth';
+import CalendarMonthHeader from './CalendarMonthHeader';
 
 const NUM_DAYS_IN_WEEK = 7;
 
 export default {
   components: {
-    CalendarHeader,
+    CalendarWeekHeader,
     CalendarWeek,
-    CalendarMonth
+    CalendarMonthHeader
   },
   data() {
     return {
