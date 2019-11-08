@@ -20,6 +20,7 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "sass-loader": "^8.0.0",
+    "style-resources-loader": "^1.2.1",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
@@ -34,7 +35,10 @@
     "rules": {
       "vue/no-unused-components": "warn",
       "no-unused-vars": "warn",
-      "quotes": ["error", "single"]
+      "quotes": [
+        "error",
+        "single"
+      ]
     },
     "parser": "vue-eslint-parser",
     "parserOptions": {
