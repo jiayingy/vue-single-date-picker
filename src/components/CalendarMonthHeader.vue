@@ -45,7 +45,7 @@ export default {
 
 <style lang="scss" scoped>
 .calendar-month-header {
-  padding: $calendar-padding;
+  padding: 15px;
   font-weight: 900;
   font-size: 20px;
   padding: 15px;

@@ -43,6 +43,6 @@ export default {
 <style lang="scss" scoped>
 .calendar-month {
   width: 100%;
-  padding: $calendar-padding;
+  padding: 15px;
 }
 </style>
