@@ -1,6 +1,9 @@
 <template>
   <div class="calendar-month-header">
-    <div class="arrow left">
+    <div
+      class="arrow left"
+      @click="toggleMonth(-1)"
+    >
       <i class="material-icons">
         keyboard_arrow_left
       </i>
@@ -8,7 +11,10 @@
     <div class="year">
       {{ fullMonth }} {{ year }}
     </div>
-    <div class="arrow right">
+    <div
+      class="arrow right" 
+      @click="toggleMonth(1)"
+    >
       <i class="material-icons">
         keyboard_arrow_right
       </i>
@@ -45,6 +51,11 @@ export default {
   computed: {
     fullMonth() {
       return MONTHS[this.month];
+    }
+  },
+  methods: {
+    toggleMonth(direction) {
+      this.$emit('toggleMonth', direction)
     }
   }
 };

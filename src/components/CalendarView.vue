@@ -1,8 +1,10 @@
+/* eslint-disable no-console */
 <template>
   <div class="calendar-view">
     <CalendarMonthHeader
       :year="year"
       :month="month"
+      @toggleMonth="toggleMonth"
     />
     <CalendarMonth 
       :dates-per-week="datesPerWeek"
@@ -21,15 +23,13 @@ export default {
     CalendarMonthHeader,
     CalendarMonth
   },
+  data() {
+    return {
+      year: 2019,
+      month: 10
+    }
+  },
   computed: {
-    year() {
-      const date = new Date();
-      return date.getFullYear();
-    },
-    month() {
-      const date = new Date();
-      return date.getMonth();
-    },
     numDays() {
       return new Date(this.year, this.month + 1, 0).getDate();
     },
@@ -75,6 +75,11 @@ export default {
       ]
     }
   },
+  created() {
+    const date = new Date();
+    this.year = date.getFullYear();
+    this.month = date.getMonth();
+  },
   methods: {
     generateDatesInWeek(startDate, startDay, numDays) {
       const datesInWeek = new Array(7).fill(0);
@@ -82,6 +87,18 @@ export default {
         datesInWeek[startDay + i] = startDate + i;
       }
       return datesInWeek;
+    },
+    toggleMonth(direction) {
+      let newMonth = this.month + Number(direction);
+      if (newMonth < 0) {
+        newMonth = 11;
+        this.year -= 1; 
+      }
+      if (newMonth > 11) {
+        newMonth = 0;
+        this.year += 1;
+      }
+      this.month = newMonth;
     }
   }
 }
