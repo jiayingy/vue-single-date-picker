@@ -1,11 +1,6 @@
 <template>
   <div class="calendar-month-header">
-    <div class="year">
-      {{ year }}
-    </div>
-    <div class="month">
-      {{ fullMonth }}
-    </div>
+    {{ fullMonth }} {{ year }}
   </div>
 </template>
 
@@ -49,7 +44,8 @@ export default {
   font-weight: 900;
   font-size: 20px;
   padding: 15px;
-  text-transform: uppercase;
-  background-image: linear-gradient(to right, #FFAFBD, #ffc3a0); 
+  border-radius: 10px 10px 0 0;
+  text-transform: capitalize;
+  background-image: linear-gradient(to right, #355C7D, #6C5B7B, #C06C84); 
 }
 </style>
