@@ -21,13 +21,15 @@ export default {
     CalendarMonthHeader,
     CalendarMonth
   },
-  data() {
-    return {
-      year: 2019,
-      month: 9
-    }
-  },
   computed: {
+    year() {
+      const date = new Date();
+      return date.getFullYear();
+    },
+    month() {
+      const date = new Date();
+      return date.getMonth();
+    },
     numDays() {
       return new Date(this.year, this.month + 1, 0).getDate();
     },
