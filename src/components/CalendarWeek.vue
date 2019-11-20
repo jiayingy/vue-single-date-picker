@@ -4,6 +4,7 @@
       v-for="(date, index) in week"
       :key="index"
       :date="date"
+      :selected="selectedDate === date"
     />
   </tr>
 </template>
@@ -19,6 +20,10 @@ export default {
       type: Array,
       default: () => []
     },
+    selectedDate: {
+      type: Number,
+      default: 0
+    }
   }
 }
 </script>
