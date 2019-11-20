@@ -90,15 +90,19 @@ export default {
     },
     toggleMonth(direction) {
       let newMonth = this.month + Number(direction);
+      let newYear = this.year;
       if (newMonth < 0) {
         newMonth = 11;
-        this.year -= 1; 
+        newYear -= 1; 
       }
       if (newMonth > 11) {
         newMonth = 0;
-        this.year += 1;
+        newYear += 1;
       }
-      this.month = newMonth;
+      if (newYear >= 1970) {
+        this.month = newMonth;
+        this.year = newYear;
+      }
     }
   }
 }
