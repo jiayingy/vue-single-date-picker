@@ -1,6 +1,8 @@
 <template>
   <th>
-    <p>{{ day }}</p>
+    <div class="calendar-week-header">
+      {{ day }}
+    </div>
   </th>
 </template>
 
@@ -15,6 +17,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.calendar-week-header {
+  margin-top: 15px;
+}
 </style>

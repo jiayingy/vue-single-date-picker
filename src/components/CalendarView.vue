@@ -1,38 +1,32 @@
+/* eslint-disable no-console */
 <template>
-  <table>
-    <thead>
-      <CalendarHeader
-        v-for="(day, index) in daysInWeek"
-        :key="index"
-        :day="day"
-      />
-    </thead>
-    <tbody>
-      <CalendarWeek
-        v-for="(week, index) in datesPerWeek"
-        :key="index"
-        :week="week"
-      />
-    </tbody>
-  </table>
+  <div class="calendar-view">
+    <CalendarMonthHeader
+      :year="year"
+      :month="month"
+      @toggleMonth="toggleMonth"
+    />
+    <CalendarMonth 
+      :dates-per-week="datesPerWeek"
+    />
+  </div>
 </template>
 
 <script>
-import CalendarHeader from './CalendarHeader';
-import CalendarWeek from './CalendarWeek';
+import CalendarMonthHeader from './CalendarMonthHeader';
+import CalendarMonth from './CalendarMonth';
 
 const NUM_DAYS_IN_WEEK = 7;
 
 export default {
   components: {
-    CalendarHeader,
-    CalendarWeek,
+    CalendarMonthHeader,
+    CalendarMonth
   },
   data() {
     return {
-      daysInWeek: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
       year: 2019,
-      month: 9
+      month: 10
     }
   },
   computed: {
@@ -81,6 +75,11 @@ export default {
       ]
     }
   },
+  created() {
+    const date = new Date();
+    this.year = date.getFullYear();
+    this.month = date.getMonth();
+  },
   methods: {
     generateDatesInWeek(startDate, startDay, numDays) {
       const datesInWeek = new Array(7).fill(0);
@@ -88,16 +87,33 @@ export default {
         datesInWeek[startDay + i] = startDate + i;
       }
       return datesInWeek;
+    },
+    toggleMonth(direction) {
+      let newMonth = this.month + Number(direction);
+      let newYear = this.year;
+      if (newMonth < 0) {
+        newMonth = 11;
+        newYear -= 1; 
+      }
+      if (newMonth > 11) {
+        newMonth = 0;
+        newYear += 1;
+      }
+      if (newYear >= 1970) {
+        this.month = newMonth;
+        this.year = newYear;
+      }
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-table {
-  padding: 15px;
+.calendar-view {
+  max-width: 300px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
+  color: #0d1e44;
 }
 </style>
