@@ -8,7 +8,7 @@
     />
     <CalendarMonth 
       :dates-per-week="datesPerWeek"
-      :selected-date="(isCurrentMonth && isCurrentYear) ? todayDate : 0"
+      :is-today="isToday"
     />
   </div>
 </template>
@@ -83,6 +83,9 @@ export default {
     },
     isCurrentYear() {
       return this.todayYear === this.year;
+    },
+    isToday() {
+      return (this.isCurrentMonth && this.isCurrentYear) ? this.todayDate : 0;
     }
   },
   created() {

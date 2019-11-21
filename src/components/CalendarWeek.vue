@@ -4,7 +4,7 @@
       v-for="(date, index) in week"
       :key="index"
       :date="date"
-      :selected="selectedDate === date"
+      :is-today="isToday === date"
     />
   </tr>
 </template>
@@ -20,7 +20,7 @@ export default {
       type: Array,
       default: () => []
     },
-    selectedDate: {
+    isToday: {
       type: Number,
       default: 0
     }

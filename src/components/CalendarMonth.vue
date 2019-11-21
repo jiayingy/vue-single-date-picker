@@ -12,7 +12,7 @@
         v-for="(week, index) in datesPerWeek"
         :key="index"
         :week="week"
-        :selected-date="selectedDate"
+        :is-today="isToday"
       />
     </tbody>
   </table>
@@ -32,7 +32,7 @@ export default {
       type: Array,
       default: () => []
     },
-    selectedDate: {
+    isToday: {
       type: Number,
       default: 0
     }

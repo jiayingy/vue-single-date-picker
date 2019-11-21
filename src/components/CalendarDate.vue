@@ -3,7 +3,7 @@
     <div
       v-show="date"
       class="date"
-      :class="{selected: selected}"
+      :class="{today: isToday}"
     >
       {{ date }}
     </div>
@@ -17,7 +17,7 @@ export default {
       type: Number,
       default: () => 1
     },
-    selected: {
+    isToday: {
       type: Boolean,
       default: false
     }
@@ -41,7 +41,7 @@ export default {
     border: 2px solid pink;
   }
 
-  &.selected {
+  &.today {
     border-radius: 50%;
     background-image: linear-gradient(to bottom right, #f1b4b9, #d2b0c3);
   }
