@@ -3,7 +3,8 @@
     <div
       v-show="date"
       class="date"
-      :class="{today: isToday}"
+      :class="{today: isToday, selected: isSelected}"
+      @click="selectDate"
     >
       {{ date }}
     </div>
@@ -20,8 +21,17 @@ export default {
     isToday: {
       type: Boolean,
       default: false
+    },
+    isSelected: {
+      type: Boolean,
+      default: false
     }
   },
+  methods: {
+    selectDate() {
+      this.$emit('selectDate', this.date);
+    }
+  }
 }
 </script>
 
@@ -36,7 +46,8 @@ export default {
   box-sizing: border-box;
   cursor: default;
 
-  &:hover {
+  &:hover,
+  &.selected {
     border-radius: 50%;
     border: 2px solid pink;
   }

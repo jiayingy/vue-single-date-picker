@@ -13,6 +13,8 @@
         :key="index"
         :week="week"
         :is-today="isToday"
+        :is-selected="isSelected"
+        @selectDate="selectDate"
       />
     </tbody>
   </table>
@@ -35,11 +37,20 @@ export default {
     isToday: {
       type: Number,
       default: 0
+    },
+    isSelected: {
+      type: Number,
+      default: 0,
     }
   },
   data() {
     return {
       daysInWeek: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+    }
+  },
+  methods: {
+    selectDate(date) {
+      this.$emit('selectDate', date);
     }
   }
 }
