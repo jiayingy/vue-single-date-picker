@@ -28,6 +28,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+tr {
+  color: #614a52;
+}
 </style>
