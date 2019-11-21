@@ -8,7 +8,9 @@
     />
     <CalendarMonth 
       :dates-per-week="datesPerWeek"
-      :selected-date="(isCurrentMonth && isCurrentYear) ? todayDate : 0"
+      :is-today="isToday"
+      :is-selected="isSelected"
+      @selectDate="selectDate"
     />
   </div>
 </template>
@@ -30,7 +32,8 @@ export default {
       month: 10,
       todayDate: 1,
       todayYear: 2019,
-      todayMonth: 10
+      todayMonth: 10,
+      selectedDate: null,
     }
   },
   computed: {
@@ -83,6 +86,15 @@ export default {
     },
     isCurrentYear() {
       return this.todayYear === this.year;
+    },
+    isToday() {
+      return (this.isCurrentMonth && this.isCurrentYear) ? this.todayDate : 0;
+    },
+    isSelected() {
+      if (this.selectedDate) {
+        return (this.selectedDate.year === this.year) && (this.selectedDate.month === this.month) ? this.selectedDate.date : 0;
+      }
+      return 0;
     }
   },
   created() {
@@ -117,6 +129,16 @@ export default {
       if (newYear >= 1970) {
         this.month = newMonth;
         this.year = newYear;
+      }
+    },
+    selectDate(date) {
+      if (date) {
+        this.selectedDate = {
+          year: this.year,
+          month: this.month,
+          date
+        }
+        this.$emit('selectDate', this.selectedDate);
       }
     }
   }

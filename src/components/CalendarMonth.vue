@@ -12,7 +12,9 @@
         v-for="(week, index) in datesPerWeek"
         :key="index"
         :week="week"
-        :selected-date="selectedDate"
+        :is-today="isToday"
+        :is-selected="isSelected"
+        @selectDate="selectDate"
       />
     </tbody>
   </table>
@@ -32,14 +34,23 @@ export default {
       type: Array,
       default: () => []
     },
-    selectedDate: {
+    isToday: {
       type: Number,
       default: 0
+    },
+    isSelected: {
+      type: Number,
+      default: 0,
     }
   },
   data() {
     return {
       daysInWeek: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+    }
+  },
+  methods: {
+    selectDate(date) {
+      this.$emit('selectDate', date);
     }
   }
 }
