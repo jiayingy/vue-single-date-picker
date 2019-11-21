@@ -64,11 +64,12 @@ export default {
 <style lang="scss" scoped>
 .calendar-month-header {
   padding: 15px;
-  background-image: linear-gradient(to right, #355C7D, #6C5B7B, #C06C84); 
+  background-image: linear-gradient(to right, #e0caca, #d4b8ca, #c7a3b5);
   display: flex;
   justify-content: space-between;
   border-radius: 10px 10px 0 0;
   align-items: center;
+  color: #77505e;
 
   .year {
     font-weight: 900;

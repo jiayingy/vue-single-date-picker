@@ -8,6 +8,7 @@
     />
     <CalendarMonth 
       :dates-per-week="datesPerWeek"
+      :selected-date="(isCurrentMonth && isCurrentYear) ? todayDate : 0"
     />
   </div>
 </template>
@@ -26,7 +27,10 @@ export default {
   data() {
     return {
       year: 2019,
-      month: 10
+      month: 10,
+      todayDate: 1,
+      todayYear: 2019,
+      todayMonth: 10
     }
   },
   computed: {
@@ -73,12 +77,23 @@ export default {
         ...this.datesInMiddleWeeks,
         this.datesInLastWeek
       ]
+    },
+    isCurrentMonth() {
+      return this.todayMonth === this.month;
+    },
+    isCurrentYear() {
+      return this.todayYear === this.year;
     }
   },
   created() {
     const date = new Date();
     this.year = date.getFullYear();
     this.month = date.getMonth();
+
+    this.todayDate = date.getDate();
+    this.todayYear = this.year;
+    this.todayMonth = this.month;
+
   },
   methods: {
     generateDatesInWeek(startDate, startDay, numDays) {

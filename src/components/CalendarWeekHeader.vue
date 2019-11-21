@@ -20,5 +20,6 @@ export default {
 <style scoped>
 .calendar-week-header {
   margin-top: 15px;
+  color: #77505e;
 }
 </style>

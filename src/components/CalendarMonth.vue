@@ -12,6 +12,7 @@
         v-for="(week, index) in datesPerWeek"
         :key="index"
         :week="week"
+        :selected-date="selectedDate"
       />
     </tbody>
   </table>
@@ -30,6 +31,10 @@ export default {
     datesPerWeek: {
       type: Array,
       default: () => []
+    },
+    selectedDate: {
+      type: Number,
+      default: 0
     }
   },
   data() {

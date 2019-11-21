@@ -3,6 +3,7 @@
     <div
       v-show="date"
       class="date"
+      :class="{selected: selected}"
     >
       {{ date }}
     </div>
@@ -15,8 +16,12 @@ export default {
     date: {
       type: Number,
       default: () => 1
+    },
+    selected: {
+      type: Boolean,
+      default: false
     }
-  }
+  },
 }
 </script>
 
@@ -34,6 +39,11 @@ export default {
   &:hover {
     border-radius: 50%;
     border: 2px solid pink;
+  }
+
+  &.selected {
+    border-radius: 50%;
+    background-image: linear-gradient(to bottom right, #f1b4b9, #d2b0c3);
   }
 }
 </style>
