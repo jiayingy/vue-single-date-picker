@@ -1,8 +1,12 @@
 {
-  "name": "vue-single-date-picker",
+  "name": "@jiayingy/vue-single-date-picker",
   "version": "0.1.0",
-  "publishConfig": { 
-    "registry": "https://npm.pkg.github.com/" 
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jiayingy/vue-single-date-picker"
   },
   "scripts": {
     "serve": "vue-cli-service serve",
