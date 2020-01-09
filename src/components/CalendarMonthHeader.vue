@@ -1,18 +1,18 @@
 <template>
-  <div class="calendar-month-header">
+  <div class="single-date-picker__calendar-month-header">
     <div
-      class="arrow left"
+      class="single-date-picker__arrow left"
       @click="toggleMonth(-1)"
     >
       <i class="material-icons">
         keyboard_arrow_left
       </i>
     </div>
-    <div class="year">
+    <div class="single-date-picker__year">
       {{ fullMonth }} {{ year }}
     </div>
     <div
-      class="arrow right" 
+      class="single-date-picker__arrow right" 
       @click="toggleMonth(1)"
     >
       <i class="material-icons">
@@ -62,7 +62,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.calendar-month-header {
+.single-date-picker__calendar-month-header {
   padding: 15px;
   background-image: linear-gradient(to right, #e0caca, #d4b8ca, #c7a3b5);
   display: flex;
@@ -71,12 +71,12 @@ export default {
   align-items: center;
   color: #77505e;
 
-  .year {
+  .single-date-picker__year {
     font-weight: 900;
     font-size: 20px;
     text-transform: capitalize;
   }
-  .arrow {
+  .single-date-picker__arrow {
     cursor: pointer;
   }
 }
