@@ -1,5 +1,5 @@
 <template>
-  <table class="calendar-month">
+  <table class="single-date-picker__calendar-month">
     <thead>
       <CalendarWeekHeader
         v-for="(day, index) in daysInWeek"
@@ -57,7 +57,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.calendar-month {
+.single-date-picker__calendar-month {
   width: 100%;
   padding: 10px;
 }
