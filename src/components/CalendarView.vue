@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 <template>
-  <div class="calendar-view">
+  <div class="single-date-picker__calendar-view">
     <CalendarMonthHeader
       :year="year"
       :month="month"
@@ -146,7 +146,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.calendar-view {
+.single-date-picker__calendar-view {
   max-width: 300px;
   background-color: white;
   border-radius: 10px;

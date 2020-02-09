@@ -2,8 +2,9 @@
   <td>
     <div
       v-show="date"
-      class="date"
-      :class="{today: isToday, selected: isSelected}"
+      class="single-date-picker__date"
+      :class="{'single-date-picker__today': isToday, 
+               'single-date-picker__selected': isSelected}"
       @click="selectDate"
     >
       {{ date }}
@@ -36,7 +37,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.date {
+.single-date-picker__date {
   font-size: 10px;
   font-size: 14px;
   height: 30px;
@@ -47,12 +48,12 @@ export default {
   cursor: default;
 
   &:hover,
-  &.selected {
+  &.single-date-picker__selected {
     border-radius: 50%;
     border: 2px solid pink;
   }
 
-  &.today {
+  &.single-date-picker__today {
     border-radius: 50%;
     background-image: linear-gradient(to bottom right, #f1b4b9, #d2b0c3);
   }
