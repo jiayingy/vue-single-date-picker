@@ -1,3 +1,9 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/vue-single-date-picker/' : '/'
+  publicPath: process.env.NODE_ENV === 'production' ? '/vue-single-date-picker/' : '/',
+  configureWebpack: {
+    output: {
+      filename: 'index.js',
+    },
+  },
+  filenameHashing: false,
 }
