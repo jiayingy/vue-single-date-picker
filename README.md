@@ -34,7 +34,7 @@ Create component in your template
 ```
 
 ### Styles
-In your css/scss file,
+In your scss file,
 ```
 @import '~@jiayingy/vue-single-date-picker/dist/vue-single-date-picker.css';
 ```
