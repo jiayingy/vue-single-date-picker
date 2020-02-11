@@ -39,8 +39,6 @@ In your css/scss file,
 @import '~@jiayingy/vue-single-date-picker/dist/vue-single-date-picker.css';
 ```
 
-This library also uses Google Web Material Icons -- refer to the guide [here](https://google.github.io/material-design-icons/#icon-font-for-the-web) on how to include it in your project.
-
 ### Events 
 |events|arguments|remarks|
 |:--|:--|:--|
