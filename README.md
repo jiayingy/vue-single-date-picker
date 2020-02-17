@@ -9,7 +9,7 @@ Refer to guide [here](https://help.github.com/en/packages/using-github-packages-
 Add the following line to your `package.json`,
 ```javascript
 dependencies {
-  "@jiayingy/vue-single-date-picker": "0.4.2"
+  "@jiayingy/vue-single-date-picker": "0.4.3"
 }
 ```
 
@@ -36,7 +36,9 @@ Create component in your template
 ```
 
 ### Styles
-In your css/scss file,
+1. This library uses Google Material Icon pack. Refer to [here](https://google.github.io/material-design-icons/) on how to include it in your project.
+
+2. In your css/scss file,
 ```
 @import '~@jiayingy/vue-single-date-picker/dist/vue-single-date-picker.css';
 ```
