@@ -1,6 +1,9 @@
 /* eslint-disable no-console */
 <template>
-  <div class="single-date-picker__calendar-view">
+  <div
+    id="single-date-picker"
+    class="single-date-picker__calendar-view"
+  >
     <CalendarMonthHeader
       :year="year"
       :month="month"
@@ -16,12 +19,13 @@
 </template>
 
 <script>
-import CalendarMonthHeader from './CalendarMonthHeader';
-import CalendarMonth from './CalendarMonth';
+import CalendarMonthHeader from './components/CalendarMonthHeader';
+import CalendarMonth from './components/CalendarMonth';
 
 const NUM_DAYS_IN_WEEK = 7;
 
 export default {
+  name: 'CalendarView',
   components: {
     CalendarMonthHeader,
     CalendarMonth
@@ -146,6 +150,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#single-date-picker {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
 .single-date-picker__calendar-view {
   max-width: 300px;
   background-color: white;
