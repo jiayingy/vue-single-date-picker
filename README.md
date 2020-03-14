@@ -2,18 +2,9 @@
 https://jiayingy.github.io/vue-single-date-picker/
 
 ## Installation
-*Plugin is currently only available via Github packages*
-
-Refer to guide [here](https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages) on how to authenticate to install github packages
-
-Add the following line to your `package.json`,
-```javascript
-dependencies {
-  "@jiayingy/vue-single-date-picker": "0.4.3"
-}
 ```
-
-Run `npm install`
+npm i vue-single-date-picker
+```
 
 ## How to use
 
@@ -21,7 +12,7 @@ Run `npm install`
 
 Import package
 ```javascript
-import SingleDatePicker from '@jiayingy/vue-single-date-picker';
+import SingleDatePicker from 'vue-single-date-picker';
 
 export default {
   components: {
@@ -40,7 +31,7 @@ Create component in your template
 
 2. In your css/scss file,
 ```
-@import '~@jiayingy/vue-single-date-picker/dist/vue-single-date-picker.css';
+@import '~vue-single-date-picker/dist/vue-single-date-picker.css';
 ```
 
 ### Events 
