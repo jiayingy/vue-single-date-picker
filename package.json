@@ -1,13 +1,22 @@
 {
   "name": "vue-single-date-picker",
-  "version": "0.4.4",
+  "version": "0.4.6",
   "main": "./dist/vue-single-date-picker.common.js",
+  "license": "MIT",
   "files": [
     "/dist"
   ],
+  "homepage": "https://jiayingy.github.io/vue-single-date-picker/",
+  "keywords": [
+    "vue", 
+    "datepicker",
+    "date-picker",
+    "date",
+    "javascript"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+git://github.com/jiayingy/vue-single-date-picker"
+    "url": "https://github.com/jiayingy/vue-single-date-picker"
   },
   "scripts": {
     "serve": "vue-cli-service serve",
