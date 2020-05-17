@@ -30,13 +30,19 @@ export default {
     CalendarMonthHeader,
     CalendarMonth
   },
+  props: {
+    date: {
+      type: Object,
+      default: () => null
+    }
+  },
   data() {
     return {
-      year: 2019,
-      month: 10,
-      todayDate: 1,
-      todayYear: 2019,
-      todayMonth: 10,
+      year: 0,
+      month: 0,
+      todayDate: 0,
+      todayYear: 0,
+      todayMonth: 0,
       selectedDate: null,
     }
   },
@@ -101,14 +107,22 @@ export default {
       return 0;
     }
   },
+  watch: {
+    date(val) {
+      this.setDate(val);
+    }
+  },
   created() {
     const date = new Date();
-    this.year = date.getFullYear();
-    this.month = date.getMonth();
-
+    if (this.date) {
+      this.setDate(this.date);
+    } else {
+      this.year = date.getFullYear();
+      this.month = date.getMonth();
+    }
     this.todayDate = date.getDate();
-    this.todayYear = this.year;
-    this.todayMonth = this.month;
+    this.todayYear = date.getFullYear();
+    this.todayMonth = date.getMonth();
 
   },
   methods: {
@@ -144,6 +158,11 @@ export default {
         }
         this.$emit('selectDate', this.selectedDate);
       }
+    },
+    setDate(date) {
+      this.year = date.year;
+      this.month = date.month;
+      this.selectedDate = this.date;
     }
   }
 }
