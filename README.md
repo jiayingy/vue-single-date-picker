@@ -33,6 +33,10 @@ Create component in your template
 ```
 @import '~vue-single-date-picker/dist/vue-single-date-picker.css';
 ```
+### Props 
+|Props|arguments|remarks|
+|:--|:--|:--|
+|date|```{ year: <Number>, month: <Number>, date: <Number> }```|E.g. 1 Jan 2020 <br> {year: 2020, month: 0, date: 1}| 
 
 ### Events 
 |events|arguments|remarks|
