@@ -184,4 +184,6 @@ export default {
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
   color: #0d1e44;
 }
+
+@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400&display=swap");
 </style>

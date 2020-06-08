@@ -1,3 +1,19 @@
+# Goals of this fork and How-to's
+
+This project is a fork from [jiayingy/vue-single-date-picker](https://github.com/jiayingy/vue-single-date-picker) and the goals are :  
+
+* Being able to build a web component of the calendar  
+* Being able to select several dates and/or unselect some dates  
+* Change the colors so that it matches the theme of a personal project  
+
+## How to build a web component  
+
+* At the root of the project, execute the command `npx vue-cli-service-build --target wc --inline-vue --name you-name-it './src/CalendarView.vue'`.  
+* In the generated html file, include both Material Icons and Google fonts  
+  * `<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">`  
+  * `<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400&display=swap" rel="stylesheet">`  
+
+# Readme of original project  
 ## Demo
 https://jiayingy.github.io/vue-single-date-picker/
 

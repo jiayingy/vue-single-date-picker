@@ -46,6 +46,7 @@ export default {
   vertical-align: middle;
   box-sizing: border-box;
   cursor: default;
+  text-align: center;
 
   &:hover,
   &.single-date-picker__selected {
