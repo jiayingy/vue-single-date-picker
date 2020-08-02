@@ -13,6 +13,7 @@
       :dates-per-week="datesPerWeek"
       :is-today="isToday"
       :is-selected="isSelected"
+      :first-day-of-week="firstDayOfWeek"
       @selectDate="selectDate"
     />
   </div>
@@ -34,6 +35,10 @@ export default {
     date: {
       type: Object,
       default: () => null
+    },
+    firstDayOfWeek: {
+      type: Number,
+      default: 0
     }
   },
   data() {
@@ -51,7 +56,7 @@ export default {
       return new Date(this.year, this.month + 1, 0).getDate();
     },
     firstDay() {
-      return new Date(this.year, this.month, 1).getDay();
+      return new Date(this.year, this.month, 1).getDay() - this.firstDayOfWeek;
     },
     lastDay() {
       return new Date(this.year, this.month + 1, 0).getDay();

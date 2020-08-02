@@ -41,6 +41,10 @@ export default {
     isSelected: {
       type: Number,
       default: 0,
+    },
+    firstDayOfWeek: {
+      type: Number,
+      default: 0
     }
   },
   data() {
@@ -48,9 +52,18 @@ export default {
       daysInWeek: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
     }
   },
+  created() {
+    this.rotateDaysInWeek(this.daysInWeek, this.firstDayOfWeek);
+  },
   methods: {
     selectDate(date) {
       this.$emit('selectDate', date);
+    },
+    rotateDaysInWeek(daysInWeek, shifts) {
+      while(shifts--) {
+        var temp = daysInWeek.shift();
+        daysInWeek.push(temp);
+      }
     }
   }
 }
