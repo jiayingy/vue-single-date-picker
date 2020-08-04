@@ -42,9 +42,9 @@ export default {
       type: Number,
       default: 0,
     },
-    firstDayOfWeek: {
+    weekStartDay: {
       type: Number,
-      default: 0
+      default: 0,
     }
   },
   data() {
@@ -53,7 +53,7 @@ export default {
     }
   },
   created() {
-    this.rotateDaysInWeek(this.daysInWeek, this.firstDayOfWeek);
+    this.rotateDaysInWeek(this.daysInWeek, this.weekStartDay);
   },
   methods: {
     selectDate(date) {

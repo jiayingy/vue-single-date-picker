@@ -13,7 +13,7 @@
       :dates-per-week="datesPerWeek"
       :is-today="isToday"
       :is-selected="isSelected"
-      :first-day-of-week="firstDayOfWeek"
+      :week-start-day="weekStartDay"
       @selectDate="selectDate"
     />
   </div>
@@ -38,7 +38,8 @@ export default {
     },
     firstDayOfWeek: {
       type: Number,
-      default: 0
+      default: 0,
+      validator: (value) => (value >= 0) && (value <= 6)
     }
   },
   data() {
@@ -49,6 +50,7 @@ export default {
       todayYear: 0,
       todayMonth: 0,
       selectedDate: null,
+      weekStartDay: 0,
     }
   },
   computed: {
@@ -56,7 +58,7 @@ export default {
       return new Date(this.year, this.month + 1, 0).getDate();
     },
     firstDay() {
-      return new Date(this.year, this.month, 1).getDay() - this.firstDayOfWeek;
+      return new Date(this.year, this.month, 1).getDay() - this.weekStartDay;
     },
     lastDay() {
       return new Date(this.year, this.month + 1, 0).getDay();
@@ -129,6 +131,7 @@ export default {
     this.todayYear = date.getFullYear();
     this.todayMonth = date.getMonth();
 
+    this.weekStartDay = (this.firstDayOfWeek >= 0 && this.firstDayOfWeek <= 6) ? this.firstDayOfWeek : 0;
   },
   methods: {
     generateDatesInWeek(startDate, startDay, numDays) {
