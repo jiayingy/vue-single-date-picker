@@ -36,7 +36,8 @@ Create component in your template
 ### Props 
 |Props|arguments|remarks|
 |:--|:--|:--|
-|date|```{ year: <Number>, month: <Number>, date: <Number> }```|E.g. 1 Jan 2020 <br> {year: 2020, month: 0, date: 1}| 
+|date|```{ year: <Number>, month: <Number>, date: <Number> }```|E.g. 1 Jan 2020 <br> {year: 2020, month: 0, date: 1}|
+|first-day-of-week|```firstDayOfWeek: <Number>```|(0: Sunday ... 6: Saturday) <br> E.g. start week on Monday <br> :first-day-of-week="1"| 
 
 ### Events 
 |events|arguments|remarks|
