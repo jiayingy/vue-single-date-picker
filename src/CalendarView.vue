@@ -9,7 +9,7 @@
       :month="month"
       @toggleMonth="toggleMonth"
     />
-    <CalendarMonth 
+    <CalendarMonth
       :dates-per-week="datesPerWeek"
       :is-today="isToday"
       :is-selected="isSelected"
@@ -58,10 +58,16 @@ export default {
       return new Date(this.year, this.month + 1, 0).getDate();
     },
     firstDay() {
-      return new Date(this.year, this.month, 1).getDay() - this.weekStartDay;
+      const startDay = new Date(this.year, this.month, 1).getDay() - this.weekStartDay;
+      if (startDay < 0) return NUM_DAYS_IN_WEEK - Math.abs(startDay);
+
+      return startDay;
     },
     lastDay() {
-      return new Date(this.year, this.month + 1, 0).getDay();
+      const lastDay = new Date(this.year, this.month + 1, 0).getDay() - this.weekStartDay;
+      if (lastDay < 0) return NUM_DAYS_IN_WEEK - Math.abs(lastDay);
+
+      return lastDay;
     },
     numDaysInFirstWeek() {
       return NUM_DAYS_IN_WEEK - this.firstDay;
@@ -146,7 +152,7 @@ export default {
       let newYear = this.year;
       if (newMonth < 0) {
         newMonth = 11;
-        newYear -= 1; 
+        newYear -= 1;
       }
       if (newMonth > 11) {
         newMonth = 0;
