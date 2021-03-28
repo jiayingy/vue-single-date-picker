@@ -21,7 +21,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "production": "yarn build --target lib --name vue-single-date-picker ./src/CalendarView.vue",
+    "demo": "yarn build ./src/demo.js"
   },
   "dependencies": {
     "core-js": "^3.3.2",
